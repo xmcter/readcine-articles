@@ -8,3 +8,7 @@
 - `site/`：纯静态产物，部署到 ECS `/var/www/readcine-articles`（nginx `blog.readcine.com`）
 
 一键发布脚本：`~/workspace/goals/readcine/publish-article.sh`（盒子），副本在 Agent-Mine `dev-projects/readcine-articles/`。
+
+## SEO
+
+每页 canonical、og/twitter、JSON-LD（文章 BlogPosting+BreadcrumbList，首页 WebSite+Blog）；`/feed.xml` 全文 RSS；`sitemap.xml` 含 lastmod 与图片扩展；IndexNow key 在 `tools/indexnow.key`（公开文件，按协议放在站点根），发布脚本自动提交。改稿时在 front matter 加 `updated: YYYY-MM-DD` 更新 dateModified。

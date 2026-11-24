@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://blog.readcine.com/</loc></url>
-  <url><loc>https://blog.readcine.com/dune3-cinema-guide/</loc><lastmod>2026-11-24</lastmod></url>
-  <url><loc>https://blog.readcine.com/bond-casting/</loc><lastmod>2026-11-24</lastmod></url>
-  <url><loc>https://blog.readcine.com/goldenhorse-mainland/</loc><lastmod>2026-11-23</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://blog.readcine.com/</loc><lastmod>2026-11-24T00:00:00+08:00</lastmod></url>
+  <url><loc>https://blog.readcine.com/dune3-cinema-guide/</loc><lastmod>2026-11-24T00:00:00+08:00</lastmod><image:image><image:loc>https://blog.readcine.com/dune3-cinema-guide/img/dune3-cover.jpg</image:loc></image:image><image:image><image:loc>https://blog.readcine.com/dune3-cinema-guide/img/dune3-ratio.jpg</image:loc></image:image><image:image><image:loc>https://blog.readcine.com/dune3-cinema-guide/img/dune3-table.jpg</image:loc></image:image><image:image><image:loc>https://blog.readcine.com/dune3-cinema-guide/img/dune3-timeline.jpg</image:loc></image:image></url>
+  <url><loc>https://blog.readcine.com/bond-casting/</loc><lastmod>2026-11-24T00:00:00+08:00</lastmod><image:image><image:loc>https://blog.readcine.com/bond-casting/img/bond-cover.jpg</image:loc></image:image><image:image><image:loc>https://blog.readcine.com/bond-casting/img/bond-finalists.jpg</image:loc></image:image><image:image><image:loc>https://blog.readcine.com/bond-casting/img/bond-villeneuve.jpg</image:loc></image:image></url>
+  <url><loc>https://blog.readcine.com/goldenhorse-mainland/</loc><lastmod>2026-11-23T00:00:00+08:00</lastmod><image:image><image:loc>https://blog.readcine.com/goldenhorse-mainland/img/cover-optA-official-trophy.jpg</image:loc></image:image></url>
 </urlset>

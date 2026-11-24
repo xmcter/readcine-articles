@@ -29,7 +29,7 @@ a:hover{text-decoration:underline}
 .card{display:flex;flex-direction:column;background:var(--card);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);
   color:var(--text);transition:transform .2s ease,box-shadow .2s ease}
 .card:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.10)}
-.card__img{aspect-ratio:16/9;width:100%;object-fit:cover;background:var(--quote);display:block}
+.card__img{aspect-ratio:16/9;width:100%;height:auto;object-fit:cover;background:var(--quote);display:block}
 .card__body{padding:16px 18px 20px}
 .card__title{font-size:18px;line-height:1.4;font-weight:600;margin:0 0 8px}
 .card__sum{font-size:14px;color:var(--muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
