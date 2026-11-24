@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://blog.readcine.com/sitemap.xml
