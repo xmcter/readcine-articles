@@ -195,7 +195,7 @@ def build():
         arts.append((meta, slug, h, d))
 
     arts.sort(key=lambda a: (a[0]["date"], a[1]), reverse=True)
-    keep = {"assets", "index.html", "sitemap.xml", "robots.txt", "404.html", "feed.xml", f"{INDEXNOW_KEY}.txt"}
+    keep = {"assets"}  # 只对多余的文章目录做提示；站点根的验证文件（googleec182282ff6b202b.html 等）手动放、不会被删除
     for slug_dir in SITE.iterdir():
         if slug_dir.is_dir() and slug_dir.name not in keep and slug_dir.name not in {a[1] for a in arts}:
             print(f"[build] 提示：site/{slug_dir.name} 已无对应 content，未删除（需要下线请手动处理）")
@@ -299,7 +299,7 @@ def build():
 </channel></rss>
 """, encoding="utf-8")
 
-    for f in list(SITE.rglob("*.html")) + [SITE / "feed.xml"]:
+    for f in [x for x in SITE.rglob("*.html") if not x.name.startswith("google")] + [SITE / "feed.xml"]:
         scan(f.read_text(encoding="utf-8"), f)
     (ROOT / "articles.json").write_text(json.dumps([{"slug": s, "title": m["title"], "date": m["date"], "url": f"{BASE}/{s}/"} for m, s, _, _ in arts], ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"[build] 完成：{len(arts)} 篇 -> {SITE}")
