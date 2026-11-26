@@ -1,28 +1,38 @@
 /* ReadCine 观影导览 · 苹果风（Agent-Mine core/rules/apple-design-style.md） */
 :root{
-  --bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--muted:#86868b;--accent:#0071e3;
+  --bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--muted:#6e6e73;--accent:#0071e3;
   --line:rgba(0,0,0,.08);--shadow:0 2px 12px rgba(0,0,0,.06);--quote:#ebebef;
   color-scheme:light dark;
 }
 @media (prefers-color-scheme:dark){
   :root{--bg:#000;--card:#1c1c1e;--text:#f5f5f7;--muted:#98989d;--accent:#0a84ff;
-    --line:rgba(255,255,255,.12);--shadow:none;--quote:#2c2c2e}
+    --line:rgba(255,255,255,.10);--shadow:none;--quote:#2c2c2e}
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--text);
-  font-family:"SF Pro Text","SF Pro Display",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   line-height:1.75;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-.top{position:sticky;top:0;z-index:5;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
-  background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
-.top__in{max-width:980px;margin:0 auto;padding:0 20px;height:52px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{font-weight:600;font-size:17px;color:var(--text);letter-spacing:.01em}
+/* 顶栏 / 页脚 / 回到顶部与 readcine.com/shared（rc-chrome）同一规格：56px 玻璃顶栏、36px 圆角图标、⌂ 回首页、44px 回到顶部 */
+.top{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+  background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:.5px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.top__in{max-width:980px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-right,0px)) 0 max(20px,env(safe-area-inset-left,0px));min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:inline-flex;align-items:center;gap:10px;min-width:0;font-weight:700;font-size:17px;color:var(--text);letter-spacing:-.02em}
 .brand:hover{text-decoration:none}
+.brand__icon{width:36px;height:36px;flex:none;border-radius:9px;object-fit:cover;display:block}
+.iconbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex:none;border-radius:50%;
+  color:var(--muted);-webkit-tap-highlight-color:transparent;transition:background-color .18s ease,color .18s ease}
+.iconbtn:hover{text-decoration:none;color:var(--text);background:color-mix(in srgb,var(--text) 6%,transparent)}
+.iconbtn:active{transform:scale(.96)}
+:focus-visible{outline:2px solid color-mix(in srgb,var(--accent) 55%,#0a84ff);outline-offset:2px}
+@media (max-width:640px){.top__in{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
 .pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 14px;font-size:13px;
   background:var(--card);color:var(--text);box-shadow:var(--shadow)}
 .pill:hover{text-decoration:none;color:var(--accent)}
+.pill{min-height:36px}
+@media (pointer:coarse){.pill{min-height:40px}}
 .wrap{max-width:980px;margin:0 auto;padding:28px 20px 56px}
 .hero h1{font-size:40px;line-height:1.15;margin:12px 0 28px;font-weight:700;letter-spacing:-.01em}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
@@ -55,8 +65,14 @@ a:hover{text-decoration:underline}
 .prose code{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:.9em;background:var(--quote);padding:1px 6px;border-radius:6px}
 .prose strong{font-weight:600}
 .back{margin-top:40px}
-.foot{max-width:980px;margin:0 auto;padding:24px 20px 40px;font-size:12px;color:var(--muted);text-align:center}
+.foot{max-width:980px;margin:40px auto 0;padding:24px 20px calc(32px + env(safe-area-inset-bottom,0px));border-top:.5px solid var(--line);
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-size:12px;line-height:1.6;color:#86868b}
 .foot a{color:var(--muted)}
+.foot a:hover{color:var(--accent);text-decoration:none}
+.foot__home{display:inline-flex;align-items:center;gap:5px}
+.foot__spacer{flex:1 1 auto}
+@media (prefers-color-scheme:dark){.foot{color:#8e8e93}}
+@media (max-width:640px){.foot{padding-left:16px;padding-right:16px}.foot a{min-height:32px;display:inline-flex;align-items:center}}
 @media (max-width:600px){.hero h1{font-size:30px}.article h1.title{font-size:26px}.prose{font-size:16px}}
 
 /* iPad / tablet typography (auto, 2026-11-25): 700–1200px or touch ≥700px; body ≥16px, meta ≥13px */
@@ -98,11 +114,14 @@ a:hover{text-decoration:underline}
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .back{margin-top:20px}
 
-.totop{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));
-  z-index:20;width:44px;height:44px;border:0;border-radius:50%;
-  background:color-mix(in srgb,var(--card) 88%,transparent);color:var(--text);
-  box-shadow:var(--shadow);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  cursor:pointer;display:flex;align-items:center;justify-content:center}
+.totop{position:fixed;right:max(16px,calc(env(safe-area-inset-right,0px) + 12px));bottom:calc(24px + env(safe-area-inset-bottom,0px));
+  z-index:90;width:44px;height:44px;padding:0;border:0;border-radius:50%;
+  background:color-mix(in srgb,var(--card) 72%,transparent);color:var(--text);
+  box-shadow:0 2px 4px rgba(20,23,28,.06),0 14px 36px rgba(20,23,28,.10),inset 0 0 0 .5px var(--line);
+  backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
+.totop:active{transform:scale(.94)}
+@media (prefers-color-scheme:dark){.totop{box-shadow:0 10px 30px rgba(0,0,0,.45),inset 0 0 0 .5px var(--line)}}
 .totop[hidden]{display:none!important}
 .totop:hover{color:var(--accent)}
 .totop:focus-visible{outline:2px solid var(--accent);outline-offset:2px}

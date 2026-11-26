@@ -28,7 +28,7 @@ BASE = "https://blog.readcine.com"
 SITE_NAME = "观影导览"
 SITE_DESC = "观影导览：新片观影指南、IMAX 等影厅制式选择、选角新闻解读与电影奖项盘点，公众号「观影导览」文章存档。"
 ICP = "湘ICP备2026041550号-1"
-ASSET_VER = "20261126-perf"
+ASSET_VER = "20261126-ui"
 TZ = ZoneInfo("Asia/Shanghai")
 LOGO = f"{BASE}/assets/icon.png"
 INDEXNOW_KEY = (ROOT / "tools" / "indexnow.key").read_text().strip()
@@ -199,11 +199,11 @@ def page(title, desc, canonical, body, og_image=None, og_type="website", extra_h
 </head>
 <body>
 <header class="top"><div class="top__in">
-<a class="brand" href="/">{SITE_NAME}</a>
-<a class="pill" href="https://readcine.com/">ReadCine</a>
+<a class="brand" href="/"><img class="brand__icon" src="/assets/icon.png" width="36" height="36" alt=""><span>{SITE_NAME}</span></a>
+<a class="iconbtn" href="https://readcine.com/" aria-label="返回 ReadCine 首页" title="返回 ReadCine 首页"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9v11h4.5v-6h4v6h4.5V9"/></svg></a>
 </div></header>
 {body}
-<footer class="foot">© {date.today().year} ReadCine · <a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">{ICP}</a></footer>
+<footer class="foot"><a class="foot__home" href="https://readcine.com/"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9v11h4.5v-6h4v6h4.5V9"/></svg><span>回 ReadCine 首页</span></a><span class="foot__spacer"></span><span>© {date.today().year} ReadCine</span><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">{ICP}</a></footer>
 <button type="button" class="totop" hidden aria-label="回到顶部">
 <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 14.5 12 8l7 6.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
