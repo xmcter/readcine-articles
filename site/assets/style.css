@@ -75,23 +75,23 @@ a:hover{text-decoration:underline}
 @media (max-width:640px){.foot{padding-left:16px;padding-right:16px}.foot a{min-height:32px;display:inline-flex;align-items:center}}
 @media (max-width:600px){.hero h1{font-size:30px}.article h1.title{font-size:26px}.prose{font-size:16px}}
 
-/* iPad / tablet typography (auto, 2026-11-25): 700–1200px or touch ≥700px; body ≥16px, meta ≥13px */
+/* iPad / tablet typography (2026-11-27, 第二档): 700–1200px 或触屏≥700px；正文/列表 ≥17px，说明 ≥16px，meta ≥14px。手机与鼠标桌面大屏不变。 */
 @media (min-width: 700px) and (max-width: 1200px), (min-width: 700px) and (pointer: coarse) {
-  .brand { font-size: 18px; }
-  .pill { font-size: 15px; }
-  .hero h1 { font-size: 40px; }
-  .card__title { font-size: 19px; }
-  .card__sum { font-size: 16px; }
-  .meta { font-size: 15px; }
-  .article h1.title { font-size: 34px; }
-  .prose { font-size: 18px; }
-  .prose h2 { font-size: 24px; }
-  .prose h3 { font-size: 20px; }
-  .prose figcaption { font-size: 15px; }
-  .prose table { font-size: 17.5px; }
-  .prose th { font-size: 15px; }
+  .brand { font-size: 19px; }
+  .pill { font-size: 16px; }
+  .hero h1 { font-size: 42px; }
+  .card__title { font-size: 20px; }
+  .card__sum { font-size: 17px; }
+  .meta { font-size: 16px; }
+  .article h1.title { font-size: 36px; }
+  .prose { font-size: 19px; line-height: 1.75; }
+  .prose h2 { font-size: 26px; }
+  .prose h3 { font-size: 21px; }
+  .prose figcaption { font-size: 16px; }
+  .prose table { font-size: 18px; }
+  .prose th { font-size: 16px; }
   .prose code { font-size: .9em; }
-  .foot { font-size: 14px; }
+  .foot { font-size: 15px; }
 }
 
 /* 2026-11-26: WebP/lightbox/pager/totop */
@@ -142,6 +142,6 @@ a:hover{text-decoration:underline}
 body.lb-open{overflow:hidden}
 
 @media (min-width: 700px) and (max-width: 1200px), (min-width: 700px) and (pointer: coarse) {
-  .pager__dir { font-size: 14px; }
-  .pager__title { font-size: 16px; }
+  .pager__dir { font-size: 15px; }
+  .pager__title { font-size: 17px; }
 }
